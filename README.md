@@ -1,3 +1,9 @@
+# Lusha Home Task
+## Description
+A NodeJS service that serves a react app for creating and displaying users. \
+The task includes a view displaying a grid of all created users (fetching using infinite-scroll) and a view of a form for creating a single user.
+There is an end to end test for creating new user. 
+
 ## Instructions
 Run the following commands:
 1. Run the docker `docker-compose -f scripts/docker-compose-dev.yml up`
