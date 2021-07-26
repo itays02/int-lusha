@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     width: '10%'
   },
   addUser:{
-    width:'3%'
+    width:'4%'
   },
   appContent: {
     paddingTop:'10px',

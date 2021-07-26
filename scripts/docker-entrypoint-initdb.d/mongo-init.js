@@ -1,9 +1,9 @@
-db = db.getSiblingDB('lusha');
+db = db.getSiblingDB('sample');
 db.createUser(
     {
         user: 'api_user',
         pwd: '1234',
-        roles: [{ role: 'readWrite', db: 'lusha' }],
+        roles: [{ role: 'readWrite', db: 'sample' }],
     },
 );
 db.createCollection('users');

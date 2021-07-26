@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const fs = require("fs");
 const { hashPassword } = require("../../server/services/util");
 
-mongoose.connect('mongodb://api_user:1234@localhost:27017/lusha', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://api_user:1234@localhost:27017/sample', {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 const usersCollection = db.collection('users')
 
