@@ -1,4 +1,4 @@
-# Lusha Home Task
+# Showing / Creating Users based on MongoDB docker container
 ## Description
 A NodeJS service that serves a react app for creating and displaying users. \
 The task includes a view displaying a grid of all created users (fetching using infinite-scroll) and a view of a form for creating a single user.
