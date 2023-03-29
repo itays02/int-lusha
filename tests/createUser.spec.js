@@ -13,7 +13,7 @@ describe('Creating users', () => {
 			"password": "1234",
 			"description": "Test User"
 		}
-		browser = await puppeteer.launch({ headless: false });
+		browser = await puppeteer.launch({ headless: true }); // change headless to false to open chromium
 		page = await browser.newPage();
 		await page.goto('http://localhost:3000/create');
 		await page.waitForSelector('#first-name');
@@ -31,21 +31,22 @@ describe('Creating users', () => {
 		await page.waitForSelector('#main-page-link');
 		await page.focus('#main-page-link');
 		await page.click('#main-page-link');
-		await page.waitForNavigation();
 	});
 
-	it("create user and verify that he/she is in the table", async (done) =>{
-			await page.waitForSelector('table')
+	it("create user and verify that he/she is in the table", async (done) => {
+		await page.waitForSelector('table')
 
-			const data = await page.$$eval('table tr td', tds => tds.map((td) => {
-				return td.innerText.toString();
-			}));
+		const data = await page.$$eval('table tr td', tds => tds.map((td) => {
+			return td.innerText.toString();
+		}));
 
-			expect(data[0]).toContain(user.firstName)
-			expect(data[1]).toContain(user.lastName)
-			expect(data[2]).toContain(user.email)
-			expect(data[3]).toContain(user.description)
+
+		expect(data[0]).toContain(user.firstName)
+		expect(data[1]).toContain(user.lastName)
+		expect(data[2]).toContain(user.email)
+		expect(data[3]).toContain(user.description)
+		done()
 	});
 
-	 afterAll(() => browser.close());
+	afterAll(() => browser.close());
 });
