@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {makeStyles} from "@material-ui/core/styles";
-import {getUsers} from "../../api";
+import { makeStyles } from "@material-ui/core/styles";
+import { getUsers } from "../../helpers/api";
 import get from "lodash/get";
 import FormLabel from "@material-ui/core/FormLabel";
 
@@ -54,16 +54,16 @@ const User = () => {
   return <div>
     <table className={classes.usersTable}>
       <tbody>
-      <tr>{titles.map(title => (<th key={title}>{title}</th>))}</tr>
-      {users.map(user => {
-        const {firstName, lastName, email, description} = user
-        return (<tr>
-          <td key={firstName}>{firstName}</td>
-          <td key={lastName}>{lastName}</td>
-          <td key={email}>{email}</td>
-          <td key={description}>{description}</td>
-        </tr>)
-      })}
+        <tr>{titles.map(title => (<th key={title}>{title}</th>))}</tr>
+        {users.map(user => {
+          const { firstName, lastName, email, description } = user
+          return (<tr>
+            <td key={firstName}>{firstName}</td>
+            <td key={lastName}>{lastName}</td>
+            <td key={email}>{email}</td>
+            <td key={description}>{description}</td>
+          </tr>)
+        })}
       </tbody>
     </table>
     {isFetching && 'Fetching more list items...'}

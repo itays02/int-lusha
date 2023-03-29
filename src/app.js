@@ -6,10 +6,11 @@ import {
   Link
 } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import User from "../../components/user/user";
-import Create from '../../components/create/create'
-import logo from '../../images/logo.png'
-import addUserIcon from '../../images/add-user.png'
+import User from "./components/user/user";
+import Create from './components/create/create'
+
+import logo from './assets/images/logo.png'
+import addUserIcon from './assets/images/add-user.png'
 
 const useStyles = makeStyles((theme) => ({
   app: {

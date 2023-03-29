@@ -13,7 +13,7 @@ describe('Creating users', () => {
 			"password": "1234",
 			"description": "Test User"
 		}
-		browser = await puppeteer.launch({ headless: true }); // change headless to false to open chromium
+		browser = await puppeteer.launch({ headless: false }); // change headless to false to open chromium
 		page = await browser.newPage();
 		await page.goto('http://localhost:3000/create');
 		await page.waitForSelector('#first-name');
