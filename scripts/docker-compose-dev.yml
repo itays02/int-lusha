@@ -9,6 +9,8 @@ services:
     ports:
       - 27017:27017
     environment:
-      MONGO_INITDB_DATABASE: pizza_store
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+      MONGO_INITDB_DATABASE: sample
     volumes:
       - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
